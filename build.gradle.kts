@@ -14,6 +14,7 @@ repositories {
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation(kotlin("test"))
     implementation(kotlin("stdlib-jdk8"))
 }
 
@@ -28,8 +29,9 @@ kotlin {
 jmh {
     fork = 2
     iterations = 3
-    timeOnIteration = "5s"
+    timeOnIteration = "10s"
     threads = 4
-    warmup = "3s"
-    warmupIterations = 1
+    warmup = "5s"
+    warmupIterations = 2
+    resultFormat = "CSV"
 }
